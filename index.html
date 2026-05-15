@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pranit Dhanade | Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0d1117;
+      color:#e6edf3;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px 0;
+    }
+
+    .logo{
+      font-size:1.4rem;
+      font-weight:700;
+      color:#58a6ff;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:#c9d1d9;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#58a6ff;
+    }
+
+    .hero{
+      min-height:85vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .hero-text h1{
+      font-size:4rem;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text span{
+      color:#58a6ff;
+    }
+
+    .hero-text p{
+      color:#8b949e;
+      font-size:1.1rem;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:16px;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:10px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#238636;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#2ea043;
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      border:1px solid #30363d;
+      color:#c9d1d9;
+    }
+
+    .btn-secondary:hover{
+      border-color:#58a6ff;
+      color:#58a6ff;
+    }
+
+    .card{
+      background:#161b22;
+      border:1px solid #30363d;
+      border-radius:20px;
+      padding:30px;
+      box-shadow:0 0 30px rgba(0,0,0,0.2);
+    }
+
+    .card h3{
+      margin-bottom:16px;
+      color:#58a6ff;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .skill{
+      padding:10px 16px;
+      background:#21262d;
+      border-radius:999px;
+      color:#c9d1d9;
+      font-size:0.9rem;
+    }
+
+    .section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      margin-bottom:50px;
+      text-align:center;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#161b22;
+      border:1px solid #30363d;
+      border-radius:18px;
+      padding:25px;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-5px);
+      border-color:#58a6ff;
+    }
+
+    .project-card h3{
+      margin-bottom:15px;
+      color:#58a6ff;
+    }
+
+    .project-card p{
+      color:#8b949e;
+      line-height:1.7;
+    }
+
+    footer{
+      border-top:1px solid #21262d;
+      padding:40px 0;
+      text-align:center;
+      color:#8b949e;
+    }
+
+    @media(max-width:900px){
+      .hero-content{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text h1{
+        font-size:3rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav>
+      <div class="logo">Pranit.dev</div>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-text">
+          <h1>
+            Hey, I'm <span>Pranit</span><br>
+            Developer & AI Enthusiast
+          </h1>
+
+          <p>
+            Computer Science student passionate about Machine Learning,
+            Open Source, AI systems, and building impactful digital experiences.
+            I write about coding, projects, technology, and experiments.
+          </p>
+
+          <div class="buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+
+            <a href="https://www.linkedin.com/in/pranit-dhanade-951478201/"
+               target="_blank"
+               class="btn btn-secondary">
+               LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Currently Working On</h3>
+
+          <p>
+            • Machine Learning Projects<br><br>
+            • Open Source Contributions<br><br>
+            • Temperature Prediction Models<br><br>
+            • AI-powered Systems<br><br>
+            • Blogging & Developer Branding
+          </p>
+
+          <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">Open Source</div>
+            <div class="skill">AI</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <section class="section" id="projects">
+
+    <div class="container">
+
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="projects">
+
+        <div class="project-card">
+          <h3>Pune Temperature Prediction</h3>
+
+          <p>
+            Machine learning model trained on historical climate data
+            using Python, Pandas, NumPy, and Scikit-Learn
+            to predict temperature trends.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Black Hole Simulator</h3>
+
+          <p>
+            Visualization project demonstrating spacetime warping
+            and gravity effects inspired by black hole physics.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Open Source Contributions</h3>
+
+          <p>
+            Contributions to collaborative development projects,
+            GitHub communities, and open-source ecosystems.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Pranit Dhanade • Built with HTML & CSS • Hosted on GitHub Pages
+    </div>
+  </footer>
+
+</body>
+</html>
