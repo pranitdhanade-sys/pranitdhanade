@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spearman Correlation Coefficient | Pranit.dev</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0d1117;
+      color:#e6edf3;
+      line-height:1.8;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px 0;
+      border-bottom:1px solid #21262d;
+      margin-bottom:60px;
+    }
+
+    .logo{
+      font-size:1.4rem;
+      font-weight:700;
+      color:#58a6ff;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:#c9d1d9;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#58a6ff;
+    }
+
+    .hero{
+      padding-bottom:60px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#21262d;
+      color:#58a6ff;
+      padding:8px 16px;
+      border-radius:999px;
+      margin-bottom:20px;
+      font-size:0.9rem;
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      line-height:1.2;
+      margin-bottom:24px;
+    }
+
+    .hero p{
+      color:#8b949e;
+      font-size:1.1rem;
+      max-width:850px;
+    }
+
+    .meta{
+      margin-top:24px;
+      color:#6e7681;
+      font-size:0.9rem;
+    }
+
+    .content{
+      padding-bottom:100px;
+    }
+
+    .content h2{
+      margin-top:50px;
+      margin-bottom:20px;
+      color:#58a6ff;
+      font-size:2rem;
+    }
+
+    .content h3{
+      margin-top:40px;
+      margin-bottom:18px;
+      font-size:1.4rem;
+      color:#c9d1d9;
+    }
+
+    .content p{
+      margin-bottom:22px;
+      color:#c9d1d9;
+    }
+
+    .content ul{
+      margin-left:20px;
+      margin-bottom:24px;
+    }
+
+    .content li{
+      margin-bottom:10px;
+      color:#c9d1d9;
+    }
+
+    .formula{
+      background:#161b22;
+      border:1px solid #30363d;
+      padding:22px;
+      border-radius:14px;
+      margin:25px 0;
+      overflow-x:auto;
+      color:#58a6ff;
+      font-size:1.1rem;
+      font-family:monospace;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:30px 0;
+      overflow:hidden;
+      border-radius:12px;
+    }
+
+    table th{
+      background:#161b22;
+      color:#58a6ff;
+      padding:16px;
+      border:1px solid #30363d;
+    }
+
+    table td{
+      padding:16px;
+      border:1px solid #30363d;
+      color:#c9d1d9;
+    }
+
+    .highlight{
+      color:#58a6ff;
+      font-weight:600;
+    }
+
+    footer{
+      border-top:1px solid #21262d;
+      padding:40px 0;
+      text-align:center;
+      color:#8b949e;
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav>
+
+      <div class="logo">
+        Pranit.dev
+      </div>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html">Blogs</a>
+      </div>
+
+    </nav>
+
+    <section class="hero">
+
+      <div class="tag">
+        Statistics • Machine Learning • Mathematics
+      </div>
+
+      <h1>
+        Spearman Rank Correlation Coefficient:
+        Proof, Theory & Applications
+      </h1>
+
+      <p>
+        A complete academic overview of Spearman’s Rank Correlation
+        Coefficient including derivation, mathematical proof,
+        statistical interpretation, properties, and applications
+        in Machine Learning, Bioinformatics, Finance,
+        and Computational Statistics.
+      </p>
+
+      <div class="meta">
+        Written by Pranit Dhanade • May 2026
+      </div>
+
+    </section>
+
+    <section class="content">
+
+      <h2>Introduction</h2>
+
+      <p>
+        Spearman’s Rank Correlation Coefficient is a non-parametric
+        statistical measure used to determine the strength and direction
+        of a monotonic relationship between two variables.
+      </p>
+
+      <p>
+        Unlike Pearson correlation, which measures linear dependence
+        using raw numerical observations, Spearman correlation operates
+        on ranked data and evaluates monotonic associations.
+      </p>
+
+      <div class="formula">
+        rₛ = 1 − [ 6 Σd² / n(n² − 1) ]
+      </div>
+
+      <p>
+        Where:
+      </p>
+
+      <ul>
+        <li><span class="highlight">rₛ</span> = Spearman correlation coefficient</li>
+        <li><span class="highlight">d</span> = Difference between paired ranks</li>
+        <li><span class="highlight">n</span> = Number of observations</li>
+      </ul>
+
+      <h2>Conceptual Understanding</h2>
+
+      <p>
+        Spearman correlation measures how consistently the ordering
+        of one variable corresponds to the ordering of another variable.
+      </p>
+
+      <p>
+        If high ranks in one variable correspond to high ranks
+        in another variable, the coefficient approaches +1.
+      </p>
+
+      <p>
+        If high ranks correspond to low ranks,
+        the coefficient approaches -1.
+      </p>
+
+      <h2>Derivation of the Formula</h2>
+
+      <h3>Step 1: Pearson Correlation Basis</h3>
+
+      <p>
+        Spearman correlation is derived from Pearson’s correlation
+        coefficient by replacing actual observations with ranks.
+      </p>
+
+      <div class="formula">
+        r = Σ[(x - x̄)(y - ȳ)] /
+        √[Σ(x - x̄)² Σ(y - ȳ)²]
+      </div>
+
+      <p>
+        Let:
+      </p>
+
+      <ul>
+        <li>R = Rank of X</li>
+        <li>S = Rank of Y</li>
+        <li>d = R − S</li>
+      </ul>
+
+      <h3>Step 2: Mean of Ranks</h3>
+
+      <p>
+        The average rank of integers from 1 to n is:
+      </p>
+
+      <div class="formula">
+        Mean Rank = (n + 1) / 2
+      </div>
+
+      <h3>Step 3: Sum of Squares</h3>
+
+      <div class="formula">
+        1² + 2² + 3² + ... + n²
+        = n(n + 1)(2n + 1) / 6
+      </div>
+
+      <p>
+        Therefore:
+      </p>
+
+      <div class="formula">
+        Σ(R - R̄)² = n(n² - 1)/12
+      </div>
+
+      <h3>Step 4: Difference Relation</h3>
+
+      <p>
+        Since:
+      </p>
+
+      <div class="formula">
+        d² = (R - S)²
+      </div>
+
+      <p>
+        Expanding:
+      </p>
+
+      <div class="formula">
+        d² = R² + S² - 2RS
+      </div>
+
+      <p>
+        Rearranging and substituting into Pearson’s formula
+        yields:
+      </p>
+
+      <div class="formula">
+        rₛ = 1 − [ 6 Σd² / n(n² − 1) ]
+      </div>
+
+      <p>
+        Hence proved.
+      </p>
+
+      <h2>Statistical Properties</h2>
+
+      <table>
+
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+
+        <tr>
+          <td>Non-Parametric</td>
+          <td>No assumption of normal distribution</td>
+        </tr>
+
+        <tr>
+          <td>Robustness</td>
+          <td>Less sensitive to outliers</td>
+        </tr>
+
+        <tr>
+          <td>Rank-Based</td>
+          <td>Uses ordinal information</td>
+        </tr>
+
+        <tr>
+          <td>Monotonicity</td>
+          <td>Detects monotonic relationships</td>
+        </tr>
+
+      </table>
+
+      <h2>Applications</h2>
+
+      <h3>1. Machine Learning</h3>
+
+      <p>
+        Spearman correlation is extensively used in feature selection,
+        ranking algorithms, recommender systems,
+        and evaluation of predictive ordering models.
+      </p>
+
+      <h3>2. Bioinformatics</h3>
+
+      <p>
+        Used in gene expression analysis,
+        genomic sequencing studies,
+        and biological ranking systems
+        where relationships are nonlinear.
+      </p>
+
+      <h3>3. Finance & Econometrics</h3>
+
+      <p>
+        Applied in stock ranking analysis,
+        behavioral finance,
+        and ordinal economic indicators.
+      </p>
+
+      <h3>4. Psychology & Social Sciences</h3>
+
+      <p>
+        Ideal for Likert-scale responses,
+        ordinal surveys,
+        and behavioral ranking measurements.
+      </p>
+
+      <h2>Advantages</h2>
+
+      <ul>
+        <li>Works well with nonlinear monotonic data</li>
+        <li>Robust against outliers</li>
+        <li>Suitable for ranked and ordinal datasets</li>
+        <li>No strict distribution assumptions</li>
+      </ul>
+
+      <h2>Limitations</h2>
+
+      <ul>
+        <li>Cannot capture non-monotonic relationships</li>
+        <li>Tied ranks may reduce accuracy</li>
+        <li>Less informative for strictly linear modeling</li>
+      </ul>
+
+      <h2>Spearman vs Pearson Correlation</h2>
+
+      <table>
+
+        <tr>
+          <th>Feature</th>
+          <th>Pearson</th>
+          <th>Spearman</th>
+        </tr>
+
+        <tr>
+          <td>Relationship Type</td>
+          <td>Linear</td>
+          <td>Monotonic</td>
+        </tr>
+
+        <tr>
+          <td>Uses Raw Values</td>
+          <td>Yes</td>
+          <td>No</td>
+        </tr>
+
+        <tr>
+          <td>Outlier Sensitivity</td>
+          <td>High</td>
+          <td>Lower</td>
+        </tr>
+
+        <tr>
+          <td>Normality Assumption</td>
+          <td>Required</td>
+          <td>Not Required</td>
+        </tr>
+
+      </table>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        Spearman’s Rank Correlation Coefficient is one of the most
+        important non-parametric statistical tools for analyzing
+        monotonic dependence between variables.
+      </p>
+
+      <p>
+        Its mathematical elegance, computational simplicity,
+        and robustness make it highly valuable in modern statistics,
+        artificial intelligence, computational biology,
+        economics, and data science research.
+      </p>
+
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 Pranit Dhanade • Statistics & Machine Learning Blog
+  </footer>
+
+</body>
+</html>
