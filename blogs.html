@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blogs | Pranit Dhanade</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0d1117;
+      color:#e6edf3;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px 0;
+      border-bottom:1px solid #21262d;
+      margin-bottom:60px;
+    }
+
+    .logo{
+      font-size:1.4rem;
+      font-weight:700;
+      color:#58a6ff;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:#c9d1d9;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#58a6ff;
+    }
+
+    .hero{
+      padding:40px 0 80px;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+    }
+
+    .hero span{
+      color:#58a6ff;
+    }
+
+    .hero p{
+      color:#8b949e;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      font-size:1.1rem;
+    }
+
+    .blog-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+      padding-bottom:100px;
+    }
+
+    .blog-card{
+      background:#161b22;
+      border:1px solid #30363d;
+      border-radius:18px;
+      overflow:hidden;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .blog-card:hover{
+      transform:translateY(-6px);
+      border-color:#58a6ff;
+      box-shadow:0 0 30px rgba(88,166,255,0.1);
+    }
+
+    .blog-image{
+      height:200px;
+      background:linear-gradient(135deg,#1f6feb,#0d1117);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:4rem;
+    }
+
+    .blog-content{
+      padding:28px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#21262d;
+      color:#58a6ff;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:0.8rem;
+      margin-bottom:18px;
+    }
+
+    .blog-content h2{
+      margin-bottom:16px;
+      font-size:1.5rem;
+      line-height:1.4;
+    }
+
+    .blog-content p{
+      color:#8b949e;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .read-btn{
+      display:inline-block;
+      padding:12px 22px;
+      background:#238636;
+      border-radius:10px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .read-btn:hover{
+      background:#2ea043;
+    }
+
+    .date{
+      margin-top:18px;
+      font-size:0.85rem;
+      color:#6e7681;
+    }
+
+    footer{
+      border-top:1px solid #21262d;
+      padding:40px 0;
+      text-align:center;
+      color:#8b949e;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.8rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav>
+
+      <div class="logo">
+        Pranit.dev
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blogs</a>
+        <a href="#">Projects</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </div>
+
+    </nav>
+
+    <section class="hero">
+
+      <h1>
+        My <span>Blogs</span>
+      </h1>
+
+      <p>
+        Thoughts, tutorials, experiments, and deep dives into
+        Machine Learning, AI, Development, Open Source,
+        Physics Simulations, and technology.
+      </p>
+
+    </section>
+
+    <section class="blog-grid">
+
+      <!-- Blog Card -->
+
+      <div class="blog-card">
+
+        <div class="blog-image">
+          🤖
+        </div>
+
+        <div class="blog-content">
+
+          <div class="tag">
+            Machine Learning
+          </div>
+
+          <h2>
+            Building a Temperature Prediction Model using Python
+          </h2>
+
+          <p>
+            Learn how I built a machine learning model using
+            historical climate datasets and Scikit-Learn
+            to predict temperature trends.
+          </p>
+
+          <a href="blogs/temp-prediction.html" class="read-btn">
+            Read Blog
+          </a>
+
+          <div class="date">
+            April 2026
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Blog Card -->
+
+      <div class="blog-card">
+
+        <div class="blog-image">
+          🌌
+        </div>
+
+        <div class="blog-content">
+
+          <div class="tag">
+            Simulation
+          </div>
+
+          <h2>
+            Creating a Black Hole Gravity Simulator
+          </h2>
+
+          <p>
+            A walkthrough of spacetime distortion simulations,
+            gravity calculations, and visual rendering concepts
+            inspired by black hole physics.
+          </p>
+
+          <a href="blogs/blackhole-simulator.html" class="read-btn">
+            Read Blog
+          </a>
+
+          <div class="date">
+            March 2026
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Blog Card -->
+
+      <div class="blog-card">
+
+        <div class="blog-image">
+          ⚡
+        </div>
+
+        <div class="blog-content">
+
+          <div class="tag">
+            Development
+          </div>
+
+          <h2>
+            My GitHub Workflow for Open Source Projects
+          </h2>
+
+          <p>
+            The Git workflow, repository structure,
+            contribution strategy, and productivity setup
+            I use for development projects.
+          </p>
+
+          <a href="blogs/github-workflow.html" class="read-btn">
+            Read Blog
+          </a>
+
+          <div class="date">
+            February 2026
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Blog Card -->
+
+      <div class="blog-card">
+
+        <div class="blog-image">
+          🧠
+        </div>
+
+        <div class="blog-content">
+
+          <div class="tag">
+            AI
+          </div>
+
+          <h2>
+            Understanding Neural Networks from Scratch
+          </h2>
+
+          <p>
+            A beginner-friendly explanation of neural networks,
+            activation functions, backpropagation,
+            and training concepts.
+          </p>
+
+          <a href="blogs/neural-networks.html" class="read-btn">
+            Read Blog
+          </a>
+
+          <div class="date">
+            January 2026
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Blog Card -->
+
+      <div class="blog-card">
+
+        <div class="blog-image">
+          🚀
+        </div>
+
+        <div class="blog-content">
+
+          <div class="tag">
+            Career
+          </div>
+
+          <h2>
+            How I Started My Developer Journey
+          </h2>
+
+          <p>
+            My experience learning programming,
+            exploring AI, building projects,
+            and growing as a developer.
+          </p>
+
+          <a href="blogs/dev-journey.html" class="read-btn">
+            Read Blog
+          </a>
+
+          <div class="date">
+            December 2025
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Blog Card -->
+
+      <div class="blog-card">
+
+        <div class="blog-image">
+          💻
+        </div>
+
+        <div class="blog-content">
+
+          <div class="tag">
+            Web Development
+          </div>
+
+          <h2>
+            Hosting a Personal Website on GitHub Pages
+          </h2>
+
+          <p>
+            Step-by-step guide to deploying
+            your portfolio or blogging site
+            completely free using GitHub Pages.
+          </p>
+
+          <a href="blogs/github-pages.html" class="read-btn">
+            Read Blog
+          </a>
+
+          <div class="date">
+            November 2025
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 Pranit Dhanade • Blogging About AI, ML & Development
+  </footer>
+
+</body>
+</html>

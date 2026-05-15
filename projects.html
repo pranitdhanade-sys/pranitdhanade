@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Pranit Dhanade</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0d1117;
+      color:#e6edf3;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px 0;
+      border-bottom:1px solid #21262d;
+      margin-bottom:60px;
+    }
+
+    .logo{
+      font-size:1.4rem;
+      font-weight:700;
+      color:#58a6ff;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:#c9d1d9;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#58a6ff;
+    }
+
+    .hero{
+      text-align:center;
+      padding:40px 0 80px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+    }
+
+    .hero span{
+      color:#58a6ff;
+    }
+
+    .hero p{
+      max-width:760px;
+      margin:auto;
+      color:#8b949e;
+      line-height:1.8;
+      font-size:1.1rem;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+      padding-bottom:100px;
+    }
+
+    .project-card{
+      background:#161b22;
+      border:1px solid #30363d;
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .project-card:hover{
+      transform:translateY(-6px);
+      border-color:#58a6ff;
+      box-shadow:0 0 30px rgba(88,166,255,0.1);
+    }
+
+    .project-banner{
+      height:220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:4rem;
+      background:linear-gradient(135deg,#1f6feb,#0d1117);
+    }
+
+    .project-content{
+      padding:28px;
+    }
+
+    .project-tag{
+      display:inline-block;
+      background:#21262d;
+      color:#58a6ff;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:0.8rem;
+      margin-bottom:18px;
+    }
+
+    .project-content h2{
+      margin-bottom:16px;
+      font-size:1.5rem;
+      line-height:1.4;
+    }
+
+    .project-content p{
+      color:#8b949e;
+      line-height:1.8;
+      margin-bottom:24px;
+    }
+
+    .tech-stack{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:25px;
+    }
+
+    .tech{
+      padding:8px 14px;
+      background:#0d1117;
+      border:1px solid #30363d;
+      border-radius:999px;
+      font-size:0.85rem;
+      color:#c9d1d9;
+    }
+
+    .buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:12px 20px;
+      border-radius:10px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:#238636;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#2ea043;
+    }
+
+    .btn-secondary{
+      border:1px solid #30363d;
+      color:#c9d1d9;
+    }
+
+    .btn-secondary:hover{
+      border-color:#58a6ff;
+      color:#58a6ff;
+    }
+
+    footer{
+      border-top:1px solid #21262d;
+      padding:40px 0;
+      text-align:center;
+      color:#8b949e;
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:2.8rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav>
+
+      <div class="logo">
+        Pranit.dev
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blogs</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </div>
+
+    </nav>
+
+    <section class="hero">
+
+      <h1>
+        My <span>Projects</span>
+      </h1>
+
+      <p>
+        A collection of AI, Machine Learning,
+        Simulation, Open Source, and Web Development projects
+        I’ve built while exploring technology and problem solving.
+      </p>
+
+    </section>
+
+    <section class="projects-grid">
+
+      <!-- Project -->
+
+      <div class="project-card">
+
+        <div class="project-banner">
+          🌡️
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Machine Learning
+          </div>
+
+          <h2>
+            Pune Temperature Prediction Model
+          </h2>
+
+          <p>
+            A machine learning system trained on climate datasets
+            to analyze and predict temperature trends using regression models.
+          </p>
+
+          <div class="tech-stack">
+            <div class="tech">Python</div>
+            <div class="tech">Pandas</div>
+            <div class="tech">NumPy</div>
+            <div class="tech">Scikit-Learn</div>
+          </div>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              Live Demo
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+              GitHub Repo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Project -->
+
+      <div class="project-card">
+
+        <div class="project-banner">
+          🌌
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Simulation
+          </div>
+
+          <h2>
+            Black Hole Gravity Simulator
+          </h2>
+
+          <p>
+            Physics-inspired visualization project demonstrating
+            spacetime distortion and gravitational effects
+            around black holes.
+          </p>
+
+          <div class="tech-stack">
+            <div class="tech">JavaScript</div>
+            <div class="tech">Canvas API</div>
+            <div class="tech">Physics</div>
+            <div class="tech">Simulation</div>
+          </div>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              Live Demo
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+              GitHub Repo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Project -->
+
+      <div class="project-card">
+
+        <div class="project-banner">
+          🤖
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Artificial Intelligence
+          </div>
+
+          <h2>
+            AI Assistant Experiments
+          </h2>
+
+          <p>
+            A collection of AI experiments involving automation,
+            chatbot systems, NLP workflows, and intelligent interfaces.
+          </p>
+
+          <div class="tech-stack">
+            <div class="tech">Python</div>
+            <div class="tech">AI</div>
+            <div class="tech">NLP</div>
+            <div class="tech">Automation</div>
+          </div>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              Live Demo
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+              GitHub Repo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Project -->
+
+      <div class="project-card">
+
+        <div class="project-banner">
+          💻
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Web Development
+          </div>
+
+          <h2>
+            Personal Portfolio & Blogging Site
+          </h2>
+
+          <p>
+            A fully responsive dark-themed personal website
+            hosted on GitHub Pages with blogs, projects,
+            and developer branding.
+          </p>
+
+          <div class="tech-stack">
+            <div class="tech">HTML</div>
+            <div class="tech">CSS</div>
+            <div class="tech">GitHub Pages</div>
+            <div class="tech">Responsive UI</div>
+          </div>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              Visit Site
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+              Source Code
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Project -->
+
+      <div class="project-card">
+
+        <div class="project-banner">
+          🚀
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Open Source
+          </div>
+
+          <h2>
+            Open Source Contributions
+          </h2>
+
+          <p>
+            Contributions to collaborative GitHub repositories,
+            developer communities, bug fixes,
+            and feature implementations.
+          </p>
+
+          <div class="tech-stack">
+            <div class="tech">Git</div>
+            <div class="tech">GitHub</div>
+            <div class="tech">Open Source</div>
+            <div class="tech">Collaboration</div>
+          </div>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              View Contributions
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+              GitHub Profile
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Project -->
+
+      <div class="project-card">
+
+        <div class="project-banner">
+          🧠
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Deep Learning
+          </div>
+
+          <h2>
+            Neural Network Learning Playground
+          </h2>
+
+          <p>
+            Experimental implementation of neural networks
+            to understand training, backpropagation,
+            and model optimization concepts.
+          </p>
+
+          <div class="tech-stack">
+            <div class="tech">TensorFlow</div>
+            <div class="tech">Deep Learning</div>
+            <div class="tech">Python</div>
+            <div class="tech">Neural Networks</div>
+          </div>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              Explore
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+              GitHub Repo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 Pranit Dhanade • Built with HTML & CSS • Hosted on GitHub Pages
+  </footer>
+
+</body>
+</html>
